@@ -2,7 +2,7 @@ import { FireApp, IFirebaseWrapper } from './IFirebaseWrapper';
 
 import firebase, { User } from 'firebase/app';
 import 'firebase/firestore';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore } from '@firebase/firestore';
 import 'firebase/auth';
 import 'firebase/storage';
 import { log } from 'misc';
@@ -23,7 +23,8 @@ export class FirebaseWrapper implements IFirebaseWrapper {
     const optionsSafe = options || {};
     this.options = optionsSafe;
     this.app = ObtainFirebaseApp(firebaseConfig, optionsSafe);
-    this.firestore = getFirestore(this.app);
+    this.firestore = this.app.firestore(); 
+    this.firestore = firebase.firestore(this.app) //getFirestore(this.GetApp());
   }
   public db(): firebase.firestore.Firestore {
     return this.firestore;
