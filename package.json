@@ -44,7 +44,6 @@
   "email": "hello@benwinding.com",
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run build",
     "build": "rm -rf dist && microbundle",
     "watch": "microbundle watch",
     "start-demo": "gulp start-demo",
