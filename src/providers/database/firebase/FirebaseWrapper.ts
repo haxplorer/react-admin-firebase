@@ -23,7 +23,7 @@ export class FirebaseWrapper implements IFirebaseWrapper {
     const optionsSafe = options || {};
     this.options = optionsSafe;
     this.app = ObtainFirebaseApp(firebaseConfig, optionsSafe);
-    this.firestore = this.app.firestore(); 
+    //this.firestore = this.app.firestore(); 
     this.firestore = firebase.firestore(this.app) //getFirestore(this.GetApp());
   }
   public db(): firebase.firestore.Firestore {
